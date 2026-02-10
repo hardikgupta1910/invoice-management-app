@@ -183,7 +183,7 @@ This is **not tutorial code** — it reflects industry-level frontend practices.
 
 ---
 
-## Future Scope (Optional)
+## Future Scope 
 
 - Backend integration (Node.js / Spring Boot)  
 - Authentication and user-specific invoices  
