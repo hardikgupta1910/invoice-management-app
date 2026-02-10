@@ -161,10 +161,12 @@ This closely simulates a **real-world invoicing workflow** used in production ap
 ## Screenshots
 
 ### Invoice List
-<img width="1366" height="768" alt="Invoice List" src="https://github.com/user-attachments/assets/203e69fd-e7d9-4947-8e58-97692acf1f7a" />
+<img width="1366" height="768" alt="Screenshot (1089)" src="https://github.com/user-attachments/assets/921147ca-1bdb-4a62-a05c-2626463eb639" />
+
 
 ### Invoice Details
-<img width="1366" height="768" alt="Invoice Details" src="https://github.com/user-attachments/assets/dd66f63f-735a-4b0d-ab29-7c0d2d87b502" />
+<img width="1366" height="768" alt="Screenshot (1090)" src="https://github.com/user-attachments/assets/f2316932-89e0-4658-850a-cd2bacdcdb79" />
+
 
 ### Create / Edit Invoice
 <img width="1366" height="768" alt="Invoice Form" src="https://github.com/user-attachments/assets/29867d86-4673-4181-8661-9ef6e9c412c4" />
