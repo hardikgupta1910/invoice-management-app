@@ -106,23 +106,26 @@ Users can view invoice summaries, inspect detailed invoice information, edit exi
 
 ---
 
+src/
 ## Project Structure
 
+```text
 src/
 ├── Component/
-│ ├── Header.jsx
-│ ├── InvoiceList.jsx
-│ ├── InvoiceDetails.jsx
-│ ├── InvoiceForm.jsx
-│ └── InvoicePDF.jsx
+│   ├── Header.jsx
+│   ├── InvoiceList.jsx
+│   ├── InvoiceDetails.jsx
+│   ├── InvoiceForm.jsx
+│   └── InvoicePDF.jsx
 │
 ├── store/
-│ ├── InvoiceSlice.js
-│ └── store.js
+│   ├── InvoiceSlice.js
+│   └── store.js
 │
 ├── App.jsx
 ├── main.jsx
 └── index.css
+
 
 
 ---
