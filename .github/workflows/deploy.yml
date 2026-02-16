@@ -23,6 +23,6 @@ jobs:
     - uses: actions/checkout@v4  # it tells github to checkout the current branch ex: if we are woking with feature branch it tells github to checkout feature branch bu tby default it checkout master/main branch
     - run: docker build -t hardikgupta2003/invoice-management-app:latest .    # this will build the docker image
 # to push docker image to docker hub so this code on github need to communicate with docker hub and to facilitate this communication btw dcoker hub and github we have to use access token of docker hub    
-    - run: -echo ${{secrets.DOCKERHUB_PASSWORD}} | docker login --username {{secrets.DOCKERHUB_USERNAME}} --password-stdin #It takes the token you wrote after echo and secretly sends it to Docker as the password to log in to your Docker Hub account.
+    - run: echo ${{secrets.DOCKERHUB_PASSWORD}} | docker login --username {{secrets.DOCKERHUB_USERNAME}} --password-stdin #It takes the token you wrote after echo and secretly sends it to Docker as the password to log in to your Docker Hub account.
 # echo "TOKEN" → prints the token and | → passes it to the next command    and   --password-stdin → tells Docker to read the password from that input instead of asking interactively
     - run: docker push hardikgupta2003/invoice-management-app:latest
