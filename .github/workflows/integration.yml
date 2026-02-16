@@ -1,0 +1,60 @@
+
+
+name: Integration
+
+
+# This on block define which jobs will trigger on which event like push or pull request
+on:        
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ] # so evrytime a pull request is happening and here target is main branch we want this particular job to run 
+
+
+# There can be multiple jobs inside jobs block currently we have only one job i.e. build
+jobs:
+  build:
+
+    runs-on: ubuntu-latest # we know all these jobs will not run on local machine but on github server, so here we specified that what machine should github use in their server
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
+
+# these are the steps that github has to do to complete one particular job
+    steps:
+    - uses: actions/checkout@v4  # it tells github to checkout the current branch ex: if we are woking with feature branch it tells github to checkout feature branch bu tby default it checkout master/main branch
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4  # this tell github to setup node environment before doing anything 
+      with:
+        node-version: ${{ matrix.node-version }}  # this tell github which version of node we want to use and that what strategy block means, i.e run all these jobs with all these node versions mentioned in matrix
+        cache: 'npm' 
+    - name: "Install dependencies"
+      run: npm i # this will install all the dependencies
+    - name: "Build Project"  
+      run: npm run build # this will build the project
+ 
+ 
+ # job 2
+  unit-tests:
+
+      runs-on: ubuntu-latest # we know all these jobs will not run on local machine but on github server, so here we specified that what machine should github use in their server
+
+      strategy:
+        matrix:
+          node-version: [18.x, 20.x, 22.x]
+
+
+# these are the steps that github has to do to complete one particular job
+      steps:
+      - uses: actions/checkout@v4  # it tells github to checkout the current branch ex: if we are woking with feature branch it tells github to checkout feature branch bu tby default it checkout master/main branch
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4  # this tell github to setup node environment before doing anything 
+        with:
+          node-version: ${{ matrix.node-version }}  # this tell github which version of node we want to use and that what strategy block means, i.e run all these jobs with all these node versions mentioned in matrix
+          cache: 'npm' 
+      - name: "Install dependencies"
+        run: npm i # this will install all the dependencies
+      - name: "Running test cases"  
+        run: npm run test # this run te test cases
